@@ -41,7 +41,7 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutFailure = function () {
-  $('message').text('Not so fast.')
+  $('#message').text('Not so fast.')
 }
 
 module.exports = {

@@ -7,7 +7,6 @@ const onSignUp = function (event) {
   event.preventDefault()
   // get the form from the event
   const form = event.target
-  console.log(event)
   // get the data from the form
   const data = getFormFields(form)
   // send the data to the api
