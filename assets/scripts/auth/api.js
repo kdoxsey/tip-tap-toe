@@ -39,6 +39,13 @@ const signOut = function (data) {
     data: data
   })
 }
+
+const startNewGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+
+  })
+}
 module.exports = {
   signUp,
   signIn,
