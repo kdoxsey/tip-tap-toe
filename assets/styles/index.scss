@@ -1,1 +1,74 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import '~bootstrap/scss/bootstrap';
+
+.container {
+  height: 100vh;
+}
+
+.board {
+  // set the board to use 100% of the viewport's height (browser's height) - 75px
+  margin: auto;
+  // set border to use 100% of height
+  max-height: calc(100vh - 75px);
+  // set the width to the same as the height so the grid is a perfcet square
+  max-width: calc(100vh - 75px);
+
+  // add a backgrounf to our board, with a picture of a cat (url)
+  // no-repeat stops small image from being repeated multiple times
+  // center center, centers along the x axis and y axis respectively
+  background: url('public/cat.jpg') no-repeat center center;
+
+  // the background image should take up 100% of the available space
+  // (and then crop the image to fill the space)
+  background-size: cover;
+}
+
+.box {
+  display: flex;
+  // center the content (Xs or Os) along the main axis
+  justify-content: center;
+  // center the content along the cross axis (vertically)
+  align-items: center;
+
+  // dd a border to the right of each box,
+  // to add verticall grid lines
+  border-right: 1px solid black;
+  // Add a border to the bottom of each xox,
+  // to add horizontal grid lines
+  border-bottom: 1px solid black;
+
+  // 3n selects every third box (so the right-most boxes)
+  &:nth-child(3n) {
+    // remove their right border so we only have lines in between our boxes
+    border-right: 0;
+  }
+
+  // select the last 3 boxes
+  &:nth-last-child(-n+3) {
+    // remove the bottom border for the last 3 boxes
+    border-bottom: 0;
+  }
+// make sure each box takes up one third of the height of the board
+  min-height: calc(100% / 3);
+
+// start the background-color of each box as white, to cover up the img behind it
+  background-color: white;
+
+// set the text to white so ir looks better on the cat image
+  // color: white;
+
+// set the font-size to be 15% of the viewport's height to be larger
+  font-size: 15vh;
+
+// make the text look 3D with text-shadow 2px to the right, 2px to the bottom
+// and make it black but 25% transparent
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+// when we hover over the box
+  &:hover {
+    // set the boxes background color to hotpink
+    background-color: hotpink;
+  }
+  // make sure the user cant highlight the X or O text w/ the cursor
+  user-select: none;
+}
