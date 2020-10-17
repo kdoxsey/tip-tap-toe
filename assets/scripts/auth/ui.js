@@ -18,6 +18,7 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
+  console.log('signed in')
 }
 
 const signInFailure = function () {
@@ -39,6 +40,7 @@ const onSignOutSuccess = function () {
   $('#sign-out-form').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
+  console.log('signed out')
 }
 
 const onSignOutFailure = function () {
@@ -48,10 +50,21 @@ const onSignOutFailure = function () {
 const onStartNewGameSuccess = function () {
   $('#message').text('Frst player to to make a string of three wins.')
   $('#game-board').show()
+  console.log('new game started')
 }
 
 const onStartNewGameFailure = function () {
   $('#message').text('Unable to start new game.')
+}
+
+const onUpdateGameSuccess = function () {
+  $('#message').text('Nice move buddy')
+  console.log('move made')
+}
+
+const onUpdateGameFailure = function () {
+  $('message').text('This square is already taken')
+  console.log('unauthorized move')
 }
 
 module.exports = {
@@ -64,5 +77,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onStartNewGameSuccess,
-  onStartNewGameFailure
+  onStartNewGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }

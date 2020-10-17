@@ -14,10 +14,10 @@
   // set the width to the same as the height so the grid is a perfcet square
   max-width: calc(100vh - 75px);
 
-  // add a backgrounf to our board, with a picture of a cat (url)
+  // add a background to our board, with a picture of a cat (url)
   // no-repeat stops small image from being repeated multiple times
   // center center, centers along the x axis and y axis respectively
-  background: url('public/cat.jpg') no-repeat center center;
+  background: url('public/city.jpg') no-repeat center center;
 
   // the background image should take up 100% of the available space
   // (and then crop the image to fill the space)
@@ -56,7 +56,7 @@
   background-color: white;
 
 // set the text to white so ir looks better on the cat image
-  // color: white;
+  color: yellow;
 
 // set the font-size to be 15% of the viewport's height to be larger
   font-size: 15vh;

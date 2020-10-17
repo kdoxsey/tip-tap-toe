@@ -55,10 +55,17 @@ const onStartNewGame = function (event) {
     .catch(ui.onStartNewGameFailure)
 }
 
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  api.updateGame()
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onStartNewGame
+  onStartNewGame,
+  onUpdateGame
 }
