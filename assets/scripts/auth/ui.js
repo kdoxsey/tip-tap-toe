@@ -57,16 +57,6 @@ const onStartNewGameFailure = function () {
   $('#message').text('Unable to start new game.')
 }
 
-const onUpdateGameSuccess = function () {
-  $('#message').text('Nice move buddy')
-  console.log('move made')
-}
-
-const onUpdateGameFailure = function () {
-  $('message').text('This square is already taken')
-  console.log('unauthorized move')
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -77,7 +67,5 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onStartNewGameSuccess,
-  onStartNewGameFailure,
-  onUpdateGameSuccess,
-  onUpdateGameFailure
+  onStartNewGameFailure
 }
