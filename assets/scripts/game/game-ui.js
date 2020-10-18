@@ -1,12 +1,12 @@
 'use strict'
-// const store = require('./../store')
+const store = require('./../store')
 
-const onStartNewGameSuccess = function () {
-  $('#message').text('Frst player to to make a string of three wins.')
+const onStartNewGameSuccess = function (param) {
+  $('#message').text('Here is your new game')
+  // store.game = game._id
   $('#game-board').show()
-  // store.user = response.user
-
-  console.log('new game started')
+  store.game = param.game._id
+  console.log(store.game)
 }
 
 const onStartNewGameFailure = function () {

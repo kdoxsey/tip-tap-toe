@@ -10,7 +10,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('You are signed in, ' + response.user.email)
+  $('#message').text('You are signed in, ' + response.user.token)
   // save user in the api response to our store object
   store.user = response.user
   $('#change-password-form').show()
