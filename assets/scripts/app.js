@@ -4,6 +4,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const events = require('./auth/events')
+const gameevents = require('./game/game-events')
 $(() => {
   // your JS code goes here
   $('#sign-up-form').on('submit', events.onSignUp)
@@ -12,7 +13,7 @@ $(() => {
   $('#sign-out-form').on('submit', events.onSignOut)
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
-  $('#start-new-game-button').on('submit', events.onStartNewGame)
+  $('#start-new-game-button').on('submit', gameevents.onStartNewGame)
   $('#start-new-game-button').hide()
   $('#game-board').hide()
 })
@@ -23,10 +24,8 @@ $(() => {
 
   // Our box click event handler
   const onBoxClick = (event) => {
-    console.log('click')
-
-    // Select the box that was clicked, event.target
     const box = $(event.target)
+    console.log('click')
 
     // Then set the text to the current player
     box.text(currentPlayer)
@@ -40,3 +39,14 @@ $(() => {
   // every 'click' the `onBoxClick` event handler is called.
   $('.box').on('click', onBoxClick)
 })
+
+// const winningArrays = {
+//   win1: [0, 1, 2],
+//   win2: [3, 4, 5],
+//   win3: [6, 7, 8],
+//   win4: [0, 3, 6],
+//   win5: [1, 4, 7],
+//   win6: [2, 5, 8],
+//   win7: [0, 4, 8],
+//   win8: [2, 4, 6]
+// }

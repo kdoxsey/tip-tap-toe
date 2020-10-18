@@ -47,16 +47,6 @@ const onSignOutFailure = function () {
   $('#message').text('Not so fast.')
 }
 
-const onStartNewGameSuccess = function () {
-  $('#message').text('Frst player to to make a string of three wins.')
-  $('#game-board').show()
-  console.log('new game started')
-}
-
-const onStartNewGameFailure = function () {
-  $('#message').text('Unable to start new game.')
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -65,7 +55,5 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure,
-  onStartNewGameSuccess,
-  onStartNewGameFailure
+  onSignOutFailure
 }
