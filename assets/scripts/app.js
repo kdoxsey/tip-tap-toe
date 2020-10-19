@@ -16,6 +16,7 @@ $(() => {
   $('#start-new-game-button').on('submit', gameevents.onStartNewGame)
   $('#start-new-game-button').hide()
   $('#game-board').hide()
+  $('#game-board').on('submit', gameevents.onStartNewGame)
 })
 
 $(() => {
