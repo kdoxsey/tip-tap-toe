@@ -37,14 +37,3 @@ $(() => {
   // every 'click' the `onBoxClick` event handler is called.
   $('.box').on('click', onBoxClick)
 })
-
-// const winningArrays = {
-//   win1: [0, 1, 2],
-//   win2: [3, 4, 5],
-//   win3: [6, 7, 8],
-//   win4: [0, 3, 6],
-//   win5: [1, 4, 7],
-//   win6: [2, 5, 8],
-//   win7: [0, 4, 8],
-//   win8: [2, 4, 6]
-// }

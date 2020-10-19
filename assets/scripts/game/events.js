@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('./../../../lib/get-form-fields')
+// const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
 
@@ -20,10 +20,16 @@ const onStartNewGame = function (event) {
     .catch(ui.startNewGameFailure)
 }
 
-// const addHandlers = function () {
-//   $('#start-new-game-button').on('submit', startNewGame)
-// }
+const updateGame = function (event) {
+  event.preventDefault()
+  console.log('game board updated')
+  api.updateGame()
+
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
 
 module.exports = {
-  onStartNewGame
+  onStartNewGame,
+  updateGame
 }
