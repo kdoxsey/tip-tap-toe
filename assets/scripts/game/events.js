@@ -4,15 +4,15 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
 
-const startNewGame = function (event) {
+const onStartNewGame = function (event) {
   event.preventDefault()
 
-  const form = event.target
+  // const form = event.target
   // get the data from the form
-  const formData = getFormFields(form)
-  console.log('formData is', formData)
+  // const formData = getFormFields()
+  console.log('new game is firing')
 
-  api.startNewGame(formData)
+  api.startNewGame()
 
     // handle successful response
     .then(ui.startNewGameSuccess)
@@ -20,10 +20,10 @@ const startNewGame = function (event) {
     .catch(ui.startNewGameFailure)
 }
 
-const addHandlers = function () {
-  $('#start-new-game-button').on('submit', startNewGame)
-}
+// const addHandlers = function () {
+//   $('#start-new-game-button').on('submit', startNewGame)
+// }
 
 module.exports = {
-  addHandlers
+  onStartNewGame
 }

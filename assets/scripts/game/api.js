@@ -8,7 +8,7 @@ const startNewGame = function (formData) {
     method: 'POST',
     data: formData,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -24,7 +24,7 @@ const startNewGame = function (formData) {
 //   })
 // }
 
-module.export = {
+module.exports = {
   startNewGame
   // showGame
 }

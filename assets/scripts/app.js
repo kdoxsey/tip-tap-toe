@@ -17,9 +17,6 @@ $(() => {
   $('#start-new-game-button').hide()
   $('#game-board').hide()
   $('#game-board').on('submit', gameevents.onStartNewGame)
-})
-
-$(() => {
   // Start the player at X
   let currentPlayer = '✕'
 
