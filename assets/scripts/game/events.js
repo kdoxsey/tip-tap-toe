@@ -37,7 +37,6 @@ const onBoxClick = (event) => {
   console.log(currentPlayer + ' chose box cell index ' + boxIndex)
   box.css('background', 'transparent').text(currentPlayer)
   // Change the current player
-  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
   const data = {
     game: {
       cell: {
@@ -52,6 +51,7 @@ const onBoxClick = (event) => {
 
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
+  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
 }
 
 module.exports = {
