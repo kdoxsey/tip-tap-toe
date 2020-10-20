@@ -26,9 +26,6 @@ let currentPlayer = '✕'
 const onBoxClick = (event) => {
 // use event.target to specify the box being clicked
   const box = $(event.target)
-  // make boxes unclickable once they are clicked
-  $(box).prop('disabled', true)
-  $(box).addClass('clicked')
   // Then set the box's text to the current player
   box.text(currentPlayer)
   // get the index of click event and set it to index in cell
