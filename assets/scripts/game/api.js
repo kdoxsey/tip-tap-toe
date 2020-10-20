@@ -15,12 +15,12 @@ const startNewGame = function (data) {
 
 const updateGame = function (data) {
   return $.ajax({
-    url: config.apiURL + '/games',
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
-    data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 

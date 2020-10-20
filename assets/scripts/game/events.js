@@ -20,16 +20,38 @@ const onStartNewGame = function (event) {
     .catch(ui.startNewGameFailure)
 }
 
-const updateGame = function (event) {
-  event.preventDefault()
-  console.log('game board updated')
-  api.updateGame()
+// Start the player at X
+let currentPlayer = '✕'
+// Our box click event handler
+const onBoxClick = (event) => {
+// use event.target to specify the box being clicked
+  const box = $(event.target)
+  // make boxes unclickable once they are clicked
+  $(box).prop('disabled', true)
+  $(box).addClass('clicked')
+  // Then set the box's text to the current player
+  box.text(currentPlayer)
+  // get the index of click event and set it to index in cell
+  const boxIndex = box.data('cell-index')
 
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure)
+  console.log(currentPlayer + ' chose box cell index ' + boxIndex)
+  box.css('background', 'transparent').text(currentPlayer)
+  // Change the current player
+  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+  const data = {
+    game: {
+      cell: {
+        index: boxIndex,
+        value: currentPlayer
+      },
+      over: false
+    }
+  }
+
+  api.updateGame(data)
 }
 
 module.exports = {
   onStartNewGame,
-  updateGame
+  onBoxClick
 }

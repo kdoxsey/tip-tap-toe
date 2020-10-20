@@ -17,23 +17,8 @@ $(() => {
   $('#start-new-game-button').hide()
   $('#game-board').hide()
   $('#game-board').on('submit', gameevents.onStartNewGame)
-  // Start the player at X
-  let currentPlayer = '✕'
-
-  // Our box click event handler
-  const onBoxClick = (event) => {
-    const box = $(event.target)
-    console.log('click')
-
-    // Then set the text to the current player
-    box.text(currentPlayer)
-    box.css('background', 'transparent').text(currentPlayer)
-
-    // Change the current player
-    currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
-  }
 
   // Select all of the boxes, $('.box'), add an event listener so that `on`
   // every 'click' the `onBoxClick` event handler is called.
-  $('.box').on('click', onBoxClick)
+  $('.box').on('click', gameevents.onBoxClick)
 })

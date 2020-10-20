@@ -3,7 +3,8 @@ const store = require('./../store')
 
 const startNewGameSuccess = function (response) {
   $('#message').text('Frst player to to make a string of three wins.')
-  store.user = response.user
+  console.log(response)
+  store.game = response.game
   $('#game-board').show()
   console.log('new game started')
 }
