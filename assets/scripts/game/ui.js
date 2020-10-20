@@ -13,8 +13,10 @@ const startNewGameFailure = function () {
   $('#message').text('Unable to start new game.')
 }
 
-const updateGameSuccess = function () {
+const updateGameSuccess = function (response) {
   $('#message').text('You clicked a box.')
+  store.game.cells = response.game.cells
+  console.log(response.game.cells)
 }
 
 const updateGameFailure = function () {

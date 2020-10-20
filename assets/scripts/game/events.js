@@ -49,6 +49,9 @@ const onBoxClick = (event) => {
   }
 
   api.updateGame(data)
+
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 
 module.exports = {
