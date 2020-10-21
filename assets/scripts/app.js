@@ -9,6 +9,7 @@ $(() => {
   // your JS code goes here
   $('#sign-up-form').on('submit', authevents.onSignUp)
   $('#sign-in-form').on('submit', authevents.onSignIn)
+  $('#total-games').hide()
   $('#change-password-form').on('submit', authevents.onChangePassword)
   $('#sign-out-form').on('submit', authevents.onSignOut)
   $('#change-password-form').hide()

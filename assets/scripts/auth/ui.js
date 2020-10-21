@@ -18,6 +18,8 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
+  $('#game-board').show()
+  $('#total-games').show()
   console.log('signed in')
 }
 

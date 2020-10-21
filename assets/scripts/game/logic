@@ -1,0 +1,15 @@
+if (data.game.cell.index[0] === 'x' && data.game.cell.index[1] === 'x' && data.game.cell.index[2] === 'x') {
+  else if (data.game.cell.index[3] === 'x' && data.game.cell.index[4] === 'x' && data.game.cell.index[5] === 'x') {
+    else if (data.game.cell.index[6] === 'x' && data.game.cell.index[7] === 'x' && data.game.cell.index[8] === 'x') {
+      else if (data.game.cell.index[0] === 'x' && data.game.cell.index[3] === 'x' && data.game.cell.index[6] === 'x') {
+        else if (data.game.cell.index[1] === 'x' && data.game.cell.index[4] === 'x' && data.game.cell.index[7] === 'x') {
+          else if (data.game.cell.index[2] === 'x' && data.game.cell.index[5] === 'x' && data.game.cell.index[8] === 'x') {
+            else if (data.game.cell.index[0] === 'x' && data.game.cell.index[4] === 'x' && data.game.cell.index[8] === 'x') {
+              else if (data.game.cell.index[2] === 'x' && data.game.cell.index[4] === 'x' && data.game.cell.index[6] === 'x')
+            }
+          }
+        }
+      }
+    }
+  }
+} 
