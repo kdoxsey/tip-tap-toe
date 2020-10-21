@@ -32,7 +32,7 @@ const updateGameFailure = function () {
 
 const onGetGamesSuccess = function (response) {
   console.log(response.games.length)
-  $('#message').text(response.games.length)
+  $('#total-games').text(response.games.length)
 }
 
 module.exports = {
