@@ -30,9 +30,15 @@ const updateGameFailure = function () {
   $('#message').text('Unable to click box.')
 }
 
+const onGetGamesSuccess = function (response) {
+  console.log(response.games.length)
+  $('#message').text(response.games.length)
+}
+
 module.exports = {
   startNewGameSuccess,
   startNewGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  onGetGamesSuccess
 }

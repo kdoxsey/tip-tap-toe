@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
   $('#total-games').show()
-  $('#games-played').text(store.user)
+  // $('#games-played').text(store.user.games.length)
   console.log('signed in')
   console.log(store.user)
 }

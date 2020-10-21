@@ -52,7 +52,15 @@ const onBoxClick = (event) => {
   currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  console.log('games are being indexed')
+  api.indexGames()
+    .then(ui.onGetGamesSuccess)
+}
+
 module.exports = {
   onStartNewGame,
-  onBoxClick
+  onBoxClick,
+  onGetGames
 }
