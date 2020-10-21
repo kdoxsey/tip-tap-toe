@@ -11,7 +11,7 @@
 }
 
 #heading {
-  background-color: rgb(160, 255, 200);
+  background-color: skyblue;
 }
 
 #sign-up {
@@ -61,10 +61,10 @@
 
   // dd a border to the right of each box,
   // to add verticall grid lines
-  border-right: 10px solid white;
+  border-right: 20px solid white;
   // Add a border to the bottom of each xox,
   // to add horizontal grid lines
-  border-bottom: 10px solid white;
+  border-bottom: 20px solid white;
 
   // 3n selects every third box (so the right-most boxes)
   &:nth-child(3n) {
