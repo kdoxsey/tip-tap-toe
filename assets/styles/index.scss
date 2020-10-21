@@ -7,7 +7,6 @@
 }
 
 #main {
-  text-shadow: 2px 2px rgba(0, 0, 0, .25);
   text-align: center;
 }
 
@@ -62,10 +61,10 @@
 
   // dd a border to the right of each box,
   // to add verticall grid lines
-  border-right: 1px solid black;
+  border-right: 10px solid white;
   // Add a border to the bottom of each xox,
   // to add horizontal grid lines
-  border-bottom: 1px solid black;
+  border-bottom: 10px solid white;
 
   // 3n selects every third box (so the right-most boxes)
   &:nth-child(3n) {
@@ -85,7 +84,7 @@
   background-color: rgb(180, 255, 200);
 
 // set the text so ir looks better on the image
-  color: white;
+  color: skyblue;
 
 // set the font-size to be 15% of the viewport's height to be larger
   font-size: 15vh;
