@@ -7,38 +7,31 @@
 }
 
 #main {
-  background-color: rgb(152, 255, 252);
   text-shadow: 2px 2px rgba(0, 0, 0, .25);
   text-align: center;
 }
 
 #heading {
-  color: pink;
   background-color: rgb(160, 255, 200);
 }
 
 #sign-up {
-  color: pink;
   background-color: rgb(160, 255, 200)
 }
 
 #sign-in {
-  color: pink;
   background-color: rgb(120, 255, 200)
 }
 
 #change-password {
-  color: pink;
   background-color: rgb(80, 255, 200)
 }
 
 #total-games {
-  color: pink;
   background-color: rgb(40, 255, 200)
 }
 
 #sign-out {
-  color: pink;
   background-color: rgb(0, 255, 200)
 }
 
@@ -53,7 +46,7 @@
   // add a background to our board, with a picture of a cat (url)
   // no-repeat stops small image from being repeated multiple times
   // center center, centers along the x axis and y axis respectively
-  background-color: grey;
+  background-color: rgb(180, 255, 200);
 
   // the background image should take up 100% of the available space
   // (and then crop the image to fill the space)
@@ -92,7 +85,7 @@
   background-color: rgb(180, 255, 200);
 
 // set the text so ir looks better on the image
-  color: pink;
+  color: white;
 
 // set the font-size to be 15% of the viewport's height to be larger
   font-size: 15vh;
