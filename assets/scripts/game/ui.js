@@ -12,14 +12,18 @@ const startNewGameSuccess = function (response) {
 const startNewGameFailure = function () {
   $('#message').text('Unable to start new game.')
 }
-
 let turn = false
-const player = turn ? 'x' : '0'
 const updateGameSuccess = function (response) {
+  const player = turn ? 'X' : '0'
   console.log(response.game.cells)
   $('#message').text('It is ' + player + ' turn.')
   return (turn = !turn)
 }
+
+// const win = function (){
+// if (response.game.cells[0] === 'x' && response.games.cells[1] === 'x' && response.games.cells[2] === 'x') {
+//   $('#message').text('It is ' + player + ' turn.')
+// }
 
 const updateGameFailure = function () {
   $('#message').text('Unable to click box.')
