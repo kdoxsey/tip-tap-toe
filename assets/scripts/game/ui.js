@@ -2,7 +2,7 @@
 const store = require('./../store')
 
 const startNewGameSuccess = function (response) {
-  $('#message').text('Frst player to to make a string of three wins.')
+  $('#message').text('Frst player to to make a string of three wins. X is up first.')
   console.log(response)
   store.game = response.game
   $('#game-board').show()
@@ -12,6 +12,7 @@ const startNewGameSuccess = function (response) {
 const startNewGameFailure = function () {
   $('#message').text('Unable to start new game.')
 }
+
 let turn = false
 const updateGameSuccess = function (response) {
   const player = turn ? 'X' : '0'

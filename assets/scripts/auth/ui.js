@@ -18,9 +18,10 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
-  $('#game-board').show()
   $('#total-games').show()
+  $('#games-played').text('this many games')
   console.log('signed in')
+  console.log(store.user)
 }
 
 const signInFailure = function () {

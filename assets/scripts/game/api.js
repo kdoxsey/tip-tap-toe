@@ -24,18 +24,19 @@ const updateGame = function (data) {
   })
 }
 
-// const indexGames = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/' + data.index,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + data.user.token
-//     },
-//     data: data
-//   })
-// }
+const indexGames = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   startNewGame,
-  updateGame
+  updateGame,
+  indexGames
 }

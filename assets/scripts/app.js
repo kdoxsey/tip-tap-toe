@@ -17,7 +17,6 @@ $(() => {
   $('#start-new-game-button').on('submit', gameevents.onStartNewGame)
   $('#start-new-game-button').hide()
   $('#game-board').hide()
-  $('#game-board').on('submit', gameevents.onStartNewGame)
 
   // Select all of the boxes, $('.box'), add an event listener so that `on`
   // every 'click' the `onBoxClick` event handler is called.
