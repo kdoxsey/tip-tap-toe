@@ -24,6 +24,17 @@ const updateGame = function (data) {
   })
 }
 
+// const indexGames = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/' + data.index,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + data.user.token
+//     },
+//     data: data
+//   })
+// }
+
 module.exports = {
   startNewGame,
   updateGame
