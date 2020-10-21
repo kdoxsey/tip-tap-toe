@@ -17,17 +17,6 @@ const updateGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: data
-  })
-}
-
-const indexGames = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'GET',
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -37,6 +26,5 @@ const indexGames = function (data) {
 
 module.exports = {
   startNewGame,
-  updateGame,
-  indexGames
+  updateGame
 }

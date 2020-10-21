@@ -10,22 +10,16 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>tip-tap-toe</h1>
+      <section id="main">
+
+      <h1 id="heading">tip-tap-toe</h1>
 
       <p id="message"></p>
-
-      <!-- total games -->
-      <section>
-        <form id="total-games" class="border">
-          <legend>total games</legend>
-            <p id="games-played"></p>
-        </form>
-      </section>
 
       <section>
         <!-- SIGN UP -->
         <form id="sign-up-form">
-          <legend>sign up</legend>
+          <legend id="sign-up">sign up</legend>
           <!-- email box -->
             <input id="sign-up-email" type="email" name="credentials[email]" placeholder="email">
           <!-- password box -->
@@ -36,11 +30,11 @@
             <input type="submit" value="sign up">
         </form>
       </section>
-      <br>
+
       <section>
         <!-- SIGN IN -->
         <form id="sign-in-form">
-          <legend>sign in</legend>
+          <legend id="sign-in">sign in</legend>
           <!-- email box -->
           <input id="sign-in-email" type="email" name="credentials[email]" placeholder="email">
           <!-- password box -->
@@ -49,11 +43,11 @@
           <input type="submit" value="sign in">
         </form>
       </section>
-      <br>
+
       <section>
         <!-- CHANGE PASSWORD -->
         <form id="change-password-form">
-          <legend>change password</legend>
+          <legend id="change-password">change password</legend>
           <!-- old password -->
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <!-- new password -->
@@ -62,10 +56,10 @@
           <input type="submit" value="change password">
         </form>
       </section>
-      <br>
+
       <section>
         <form id="sign-out-form" class="border">
-          <legend>sign out</legend>
+          <legend id="sign-out">sign out</legend>
             <input type="submit" value="sign out">
         </form>
       </section>
@@ -76,6 +70,7 @@
         <input type="submit" value="start new game">
       </form>
     </section>
+    <br>
 
   <section id="game-board" class="container">
 
@@ -96,8 +91,13 @@
 
   </section>
 
+  <!-- total games -->
+  <section>
+      <legend id="total-games">total games</legend>
+        <p id="games-played"></p>
+  </section>
 
-
+  </section>
 
     </body>
 </html>

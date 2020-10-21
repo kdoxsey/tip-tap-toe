@@ -10,7 +10,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('You are signed in, ' + response.user.token)
+  $('#message').text('You are signed in')
   // save user in the api response to our store object
   store.user = response.user
   $('#change-password-form').show()
@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
   $('#total-games').show()
-  $('#games-played').text('this many games')
+  $('#games-played').text(store.user)
   console.log('signed in')
   console.log(store.user)
 }

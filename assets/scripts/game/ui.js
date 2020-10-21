@@ -17,7 +17,7 @@ let turn = false
 const updateGameSuccess = function (response) {
   const player = turn ? 'X' : '0'
   console.log(response.game.cells)
-  $('#message').text('It is ' + player + ' turn.')
+  $('#message').text('It is ' + player + "'s turn.")
   return (turn = !turn)
 }
 

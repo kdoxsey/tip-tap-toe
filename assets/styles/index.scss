@@ -6,6 +6,42 @@
   height: 100vh;
 }
 
+#main {
+  background-color: rgb(152, 255, 252);
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+  text-align: center;
+}
+
+#heading {
+  color: pink;
+  background-color: rgb(180, 255, 200);
+}
+
+#sign-up {
+  color: pink;
+  background-color: rgb(160, 255, 200)
+}
+
+#sign-in {
+  color: pink;
+  background-color: rgb(120, 255, 200)
+}
+
+#change-password {
+  color: pink;
+  background-color: rgb(80, 255, 200)
+}
+
+#total-games {
+  color: pink;
+  background-color: rgb(40, 255, 200)
+}
+
+#sign-out {
+  color: pink;
+  background-color: rgb(0, 255, 200)
+}
+
 .board {
   // set the board to use 100% of the viewport's height (browser's height) - 75px
   margin: auto;
@@ -17,7 +53,7 @@
   // add a background to our board, with a picture of a cat (url)
   // no-repeat stops small image from being repeated multiple times
   // center center, centers along the x axis and y axis respectively
-  background: url('public/city.jpg') no-repeat center center;
+  background-color: pink;
 
   // the background image should take up 100% of the available space
   // (and then crop the image to fill the space)
@@ -52,22 +88,22 @@
 // make sure each box takes up one third of the height of the board
   min-height: calc(100% / 3);
 
-// start the background-color of each box as white, to cover up the img behind it
-  background-color: white;
+// start the background-color of each box to cover up the img behind it
+  background-color: rgb(180, 255, 200);
 
-// set the text to white so ir looks better on the cat image
-  color: yellow;
+// set the text so ir looks better on the image
+  color: rgb(180, 255, 200);
 
 // set the font-size to be 15% of the viewport's height to be larger
   font-size: 15vh;
 
 // make the text look 3D with text-shadow 2px to the right, 2px to the bottom
 // and make it black but 25% transparent
-  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+  // text-shadow: 2px 2px rgba(0, 0, 0, .25);
 // when we hover over the box
   &:hover {
-    // set the boxes background color to hotpink
-    background-color: hotpink;
+    // set the boxes background color
+    background-color: pink;
   }
   // make sure the user cant highlight the X or O text w/ the cursor
   user-select: none;

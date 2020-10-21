@@ -2,6 +2,7 @@
 const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
+// const gameapi = require('./../game/api')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -26,6 +27,7 @@ const onSignIn = function (event) {
 
   // send data to API
   api.signIn(data)
+  // api.indexGames(data)
     // handle success response
     .then(ui.signInSuccess)
     // handle failure response
