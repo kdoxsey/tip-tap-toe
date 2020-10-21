@@ -14,7 +14,7 @@
 
 #heading {
   color: pink;
-  background-color: rgb(180, 255, 200);
+  background-color: rgb(160, 255, 200);
 }
 
 #sign-up {
@@ -53,7 +53,7 @@
   // add a background to our board, with a picture of a cat (url)
   // no-repeat stops small image from being repeated multiple times
   // center center, centers along the x axis and y axis respectively
-  background-color: pink;
+  background-color: grey;
 
   // the background image should take up 100% of the available space
   // (and then crop the image to fill the space)
@@ -92,7 +92,7 @@
   background-color: rgb(180, 255, 200);
 
 // set the text so ir looks better on the image
-  color: rgb(180, 255, 200);
+  color: pink;
 
 // set the font-size to be 15% of the viewport's height to be larger
   font-size: 15vh;
@@ -103,7 +103,7 @@
 // when we hover over the box
   &:hover {
     // set the boxes background color
-    background-color: pink;
+    background-color: skyblue;
   }
   // make sure the user cant highlight the X or O text w/ the cursor
   user-select: none;
