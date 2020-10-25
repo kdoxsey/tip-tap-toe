@@ -16,7 +16,8 @@ const startNewGameFailure = function () {
 let turn = false
 const updateGameSuccess = function (response) {
   const player = turn ? 'X' : '0'
-  console.log(response.game.cells)
+  store.game = response.game
+  console.log(response)
   $('#message').text('It is ' + player + "'s turn.")
   return (turn = !turn)
 }
@@ -34,6 +35,15 @@ const onGetGamesSuccess = function (response) {
   console.log(response.games.length)
   $('#total-games').text(response.games.length)
 }
+
+// const xWins = function (response) {
+//   console.log(store.game.over)
+//   $('#message').text('X wins')
+// }
+//
+// const oWins = function (response) {
+//   $('#message').text('0 wins')
+// }
 
 module.exports = {
   startNewGameSuccess,
