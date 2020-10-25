@@ -36,6 +36,11 @@ const onGetGamesSuccess = function (response) {
   $('#total-games').text(response.games.length)
 }
 
+const onGetGamesFailure = function (response) {
+  console.log(response.games.length)
+  $('#total-games').text('Unable to load total games.')
+}
+
 // const xWins = function (response) {
 //   console.log(store.game.over)
 //   $('#message').text('X wins')
@@ -50,5 +55,6 @@ module.exports = {
   startNewGameFailure,
   updateGameSuccess,
   updateGameFailure,
-  onGetGamesSuccess
+  onGetGamesSuccess,
+  onGetGamesFailure
 }

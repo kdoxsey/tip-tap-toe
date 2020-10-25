@@ -8,6 +8,7 @@
 
 #main {
   text-align: center;
+    background-color: lavender;
 }
 
 #heading {
@@ -61,10 +62,10 @@
 
   // dd a border to the right of each box,
   // to add verticall grid lines
-  border-right: 30px solid white;
+  border-right: 30px solid lavender;
   // Add a border to the bottom of each xox,
   // to add horizontal grid lines
-  border-bottom: 30px solid white;
+  border-bottom: 30px solid lavender;
 
   // 3n selects every third box (so the right-most boxes)
   &:nth-child(3n) {
