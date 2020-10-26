@@ -7,6 +7,9 @@ const startNewGameSuccess = function (response) {
   store.game = response.game
   $('#game-board').show()
   console.log('new game started')
+  // $('#music').show()
+  // const emptyCells = store.game.cells === ['', '', '', '', '', '', '', '', '']
+  // store.game.cells = emptyCells
 }
 
 const startNewGameFailure = function () {

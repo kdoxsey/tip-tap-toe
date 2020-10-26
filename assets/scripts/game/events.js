@@ -28,6 +28,8 @@ const onCheckWin = (event) => {
   if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2]) {
     console.log('winner')
     store.game.over = true
+    // const box = event.target
+    // box.css('pointer-events', 'none')
     $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6]) {
     console.log('winner')
@@ -66,6 +68,7 @@ const onBoxClick = (event) => {
   box.text(currentPlayer)
   // get the index of click event and set it to index in cell
   const cellIndex = box.data('cell-index')
+  box.css('pointer-events', 'none')
   console.log(currentPlayer + ' chose box cell index ' + cellIndex)
   box.css('background', 'transparent').text(currentPlayer)
   const data = {
