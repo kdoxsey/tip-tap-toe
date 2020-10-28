@@ -23,7 +23,7 @@ const onStartNewGame = function (event) {
 
 // Start the player at X
 let currentPlayer = '✕'
-
+let moves = 0
 const onCheckWin = (event) => {
   if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2]) {
     console.log('winner')
@@ -52,13 +52,19 @@ const onCheckWin = (event) => {
   } else if (store.game.cells[6] !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8]) {
     console.log('winner')
     $('#message').text(store.game.cells[6] + ' wins')
-  } else {
-    console.log('not over yet')
+  } else if (moves === 9 && store.game.over === false) {
+    console.log('tie')
+    store.game.over = true
+    console.log('game over: ' + store.game.over)
+    $('#message').text('tie game')
     // Need to change data.winner to value of tie
     // if (store.game.cells[0] !== '' && data.moves === 9) {
     // } else return data
+  } else {
+    console.log('not over yet')
   }
 }
+
 // Our box click event handler
 const onBoxClick = (event) => {
   event.preventDefault()
@@ -85,6 +91,10 @@ const onBoxClick = (event) => {
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
     .then(onCheckWin)
+
+  moves += 1
+  console.log('total moves: ' + moves)
+
   // console.log(data.game.cell.index)
   // Change the current player
   currentPlayer = currentPlayer === 'O' ? '✕' : 'O'

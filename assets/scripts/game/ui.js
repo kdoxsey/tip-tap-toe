@@ -20,7 +20,6 @@ let turn = false
 const updateGameSuccess = function (response) {
   const player = turn ? 'X' : '0'
   store.game = response.game
-  console.log(response)
   $('#message').text('It is ' + player + "'s turn.")
   return (turn = !turn)
 }
