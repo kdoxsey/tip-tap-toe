@@ -3,6 +3,7 @@ const store = require('./../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
+  $('#sign-up-form').trigger('reset')
 }
 
 const signUpFailure = function () {

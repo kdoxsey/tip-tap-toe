@@ -7,9 +7,8 @@ const startNewGameSuccess = function (response) {
   store.game = response.game
   $('#game-board').show()
   console.log('new game started')
-  // $('#music').show()
-  // const emptyCells = store.game.cells === ['', '', '', '', '', '', '', '', '']
-  // store.game.cells = emptyCells
+  $('.box').text('')
+  $('.box').css('pointer-events', 'auto')
 }
 
 const startNewGameFailure = function () {
@@ -24,11 +23,6 @@ const updateGameSuccess = function (response) {
   return (turn = !turn)
 }
 
-// const win = function (){
-// if (response.game.cells[0] === 'x' && response.games.cells[1] === 'x' && response.games.cells[2] === 'x') {
-//   $('#message').text('It is ' + player + ' turn.')
-// }
-
 const updateGameFailure = function () {
   $('#message').text('Unable to click box.')
 }
@@ -39,18 +33,8 @@ const onGetGamesSuccess = function (response) {
 }
 
 const onGetGamesFailure = function (response) {
-  console.log(response.games.length)
   $('#total-games').text('Unable to load total games.')
 }
-
-// const xWins = function (response) {
-//   console.log(store.game.over)
-//   $('#message').text('X wins')
-// }
-//
-// const oWins = function (response) {
-//   $('#message').text('0 wins')
-// }
 
 module.exports = {
   startNewGameSuccess,
