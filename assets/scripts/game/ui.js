@@ -2,13 +2,13 @@
 const store = require('./../store')
 
 const startNewGameSuccess = function (response) {
+  $('.box').css('pointer-events', 'auto')
   $('#message').text('Frst player to to make a string of three wins. X is up first.')
   console.log(response)
   store.game = response.game
   $('#game-board').show()
   console.log('new game started')
   $('.box').text('')
-  $('.box').css('pointer-events', 'auto')
 }
 
 const startNewGameFailure = function () {
@@ -17,9 +17,10 @@ const startNewGameFailure = function () {
 
 let turn = false
 const updateGameSuccess = function (response) {
-  const player = turn ? 'X' : '0'
+  // const player = turn ? 'X' : '0'
   store.game = response.game
-  $('#message').text('It is ' + player + "'s turn.")
+  // console.log(store.game)
+
   return (turn = !turn)
 }
 

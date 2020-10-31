@@ -8,6 +8,7 @@ const store = require('./../store')
 const onStartNewGame = function (event) {
   event.preventDefault()
   console.log('new game is firing')
+  currentPlayer = 'X'
   api.startNewGame()
     // handle successful response
     .then(ui.startNewGameSuccess)
@@ -15,61 +16,70 @@ const onStartNewGame = function (event) {
     .catch(ui.startNewGameFailure)
 }
 
-// Start the player at X
-let currentPlayer = '✕'
 let moves = 0
 const onCheckWin = (event) => {
   if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
+    moves = 0
     $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[0] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[0] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[1] !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[1] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[1] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[2] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[2] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[3] !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[3] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[3] + ' wins')
   } else if (store.game.cells[6] !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text(store.game.cells[6] + ' wins')
+    moves = 0
+    // $('#message').text(store.game.cells[6] + ' wins')
   } else if (moves === 9 && store.game.over === false) {
     console.log('tie')
     store.game.over = true
     console.log('game over: ' + store.game.over)
-    $('#message').text('tie game')
+    moves = 0
+    // $('#message').text('tie game')
     store.game.over = true
   } else {
     console.log('not over yet')
   }
 }
 
+// Start the player at X
+let currentPlayer = 'X'
 // Our box click event handler
 const onBoxClick = (event) => {
   event.preventDefault()
@@ -77,7 +87,6 @@ const onBoxClick = (event) => {
   const box = $(event.target)
   // Then set the box's text to the current player
   box.text(currentPlayer)
-  // box cant be clicked on again
   box.css('pointer-events', 'none')
   // get the index of click event and set it to index in cell
   const cellIndex = box.data('cell-index')
@@ -93,15 +102,14 @@ const onBoxClick = (event) => {
     }
   }
   api.updateGame(data)
-
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
     .then(onCheckWin)
 
   moves += 1
   console.log('total moves: ' + moves)
-
-  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+  currentPlayer = currentPlayer === 'X' ? '0' : 'X'
+  $('#message').text('It is ' + currentPlayer + "'s turn.")
 }
 
 const onGetGames = function (event) {

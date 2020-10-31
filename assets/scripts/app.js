@@ -19,13 +19,6 @@ $(() => {
   $('#game-board').hide()
   $('#get-games').hide()
   $('#get-games').on('submit', gameevents.onGetGames)
-
-  const audio = $('#music')[0]
-  $('button').click(function () {
-    audio.play()
-  })
-  // $('#music').hide()
-
   // Select all of the boxes, $('.box'), add an event listener so that `on`
   // every 'click' the `onBoxClick` event handler is called.
   $('.box').on('click', gameevents.onBoxClick)
