@@ -29,49 +29,49 @@ const onCheckWin = (event) => {
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[0] + ' wins')
+    $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[0] + ' wins')
+    $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[1] !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[1] + ' wins')
+    $('#message').text(store.game.cells[1] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[2] + ' wins')
+    $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[2] + ' wins')
+    $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[3] !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[3] + ' wins')
+    $('#message').text(store.game.cells[3] + ' wins')
   } else if (store.game.cells[6] !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8]) {
     console.log('winner')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text(store.game.cells[6] + ' wins')
+    $('#message').text(store.game.cells[6] + ' wins')
   } else if (moves === 9 && store.game.over === false) {
     console.log('tie')
     store.game.over = true
     console.log('game over: ' + store.game.over)
     moves = 0
-    // $('#message').text('tie game')
+    $('#message').text('tie game')
     store.game.over = true
   } else {
     console.log('not over yet')
