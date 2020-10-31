@@ -84,9 +84,8 @@ let currentPlayer = 'X'
 // Our box click event handler
 const onBoxClick = (event) => {
   event.preventDefault()
-  const board = store.game.cells
   if (store.game.over === true) {
-    board.css('pointer-events', 'none')
+    return store.game.cells('pointer-events', 'none')
   }
   // use event.target to specify the box being clicked
   const box = $(event.target)

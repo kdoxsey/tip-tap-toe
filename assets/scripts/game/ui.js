@@ -3,7 +3,7 @@ const store = require('./../store')
 
 const startNewGameSuccess = function (response) {
   $('.box').css('pointer-events', 'auto')
-  $('#message').text('Frst player to to make a string of three wins. X is up first.')
+  $('#message').text('First player to to make a string of three wins. X is up first.')
   console.log(response)
   store.game = response.game
   $('#game-board').show()
