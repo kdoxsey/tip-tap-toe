@@ -21,8 +21,7 @@ const signInSuccess = function (response) {
   $('#start-new-game-button').show()
   $('#get-games').show()
   $('#total-games').show()
-  console.log('signed in')
-  console.log(store.user)
+  $('#sign-in-form').trigger('reset')
 }
 
 const signInFailure = function () {
@@ -45,7 +44,9 @@ const onSignOutSuccess = function () {
   $('#sign-out-form').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
-  console.log('signed out')
+  $('#game-board').hide()
+  $('#message').hide()
+  $('#get-games').hide()
 }
 
 const onSignOutFailure = function () {

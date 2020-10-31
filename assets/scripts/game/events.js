@@ -7,7 +7,6 @@ const store = require('./../store')
 
 const onStartNewGame = function (event) {
   event.preventDefault()
-  console.log('new game is firing')
   moves = 0
   currentPlayer = 'X'
   api.startNewGame()
@@ -20,62 +19,43 @@ const onStartNewGame = function (event) {
 let moves = 0
 const onCheckWin = (event) => {
   if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[0] !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[0] + ' wins')
   } else if (store.game.cells[1] !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[1] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[2] !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[2] + ' wins')
   } else if (store.game.cells[3] !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[3] + ' wins')
   } else if (store.game.cells[6] !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8]) {
-    console.log('winner')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text(store.game.cells[6] + ' wins')
   } else if (moves === 9 && store.game.over === false) {
-    console.log('tie')
     store.game.over = true
-    console.log('game over: ' + store.game.over)
     moves = 0
     $('#message').text('tie game')
     store.game.over = true
   } else {
-    console.log('not over yet')
   }
 }
 
@@ -94,7 +74,6 @@ const onBoxClick = (event) => {
   box.css('pointer-events', 'none')
   // get the index of click event and set it to index in cell
   const cellIndex = box.data('cell-index')
-  console.log(currentPlayer + ' chose box cell index ' + cellIndex)
   box.css('background', 'transparent').text(currentPlayer)
   const data = {
     game: {
@@ -111,14 +90,12 @@ const onBoxClick = (event) => {
     .then(onCheckWin)
 
   moves += 1
-  console.log('total moves: ' + moves)
   currentPlayer = currentPlayer === 'X' ? '0' : 'X'
   $('#message').text('It is ' + currentPlayer + "'s turn.")
 }
 
 const onGetGames = function (event) {
   event.preventDefault()
-  console.log('games are being indexed')
   api.indexGames()
     .then(ui.onGetGamesSuccess)
 }

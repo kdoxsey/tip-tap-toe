@@ -4,10 +4,8 @@ const store = require('./../store')
 const startNewGameSuccess = function (response) {
   $('.box').css('pointer-events', 'auto')
   $('#message').text('First player to to make a string of three wins. X is up first.')
-  console.log(response)
   store.game = response.game
   $('#game-board').show()
-  console.log('new game started')
   $('.box').text('')
 }
 
@@ -29,7 +27,6 @@ const updateGameFailure = function () {
 }
 
 const onGetGamesSuccess = function (response) {
-  console.log(response.games.length)
   $('#total-games').text(response.games.length)
 }
 
