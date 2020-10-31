@@ -94,10 +94,6 @@
 // and make it black but 25% transparent
   // text-shadow: 2px 2px rgba(0, 0, 0, .25);
 // when we hover over the box
-  &:hover {
-    // set the boxes background color
-    background-color: skyblue;
-  }
   // make sure the user cant highlight the X or O text w/ the cursor
   user-select: none;
 }
