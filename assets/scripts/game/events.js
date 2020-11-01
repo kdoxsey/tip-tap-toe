@@ -67,7 +67,6 @@ const onBoxClick = (event) => {
   if (store.game.over) {
     return onBoxClick
   }
-  // }
   // use event.target to specify the box being clicked
   const box = $(event.target)
   // Then set the box's text to the current player
