@@ -64,9 +64,10 @@ let currentPlayer = 'X'
 // Our box click event handler
 const onBoxClick = (event) => {
   event.preventDefault()
-  if (store.game.over === true) {
-    return store.game.cells('pointer-events', 'none')
+  if (store.game.over) {
+    return onBoxClick
   }
+  // }
   // use event.target to specify the box being clicked
   const box = $(event.target)
   // Then set the box's text to the current player

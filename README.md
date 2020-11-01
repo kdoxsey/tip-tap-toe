@@ -11,12 +11,12 @@ JQuery
 Ajax
 
 Application Issues:
--Line 68 of /assets/scripts/game/events.js creates an error in the console but the game still functions as needed.
+-In the future I want the number of games displayed to disappear after a user signs out and signs back in.
 -The code is not dry which may make future edits difficult.
 
 Planning and Development:
 -The game begins with the HTML and CSS. The nine boxes are defined in HTML and then given their dimensions in CSS using Bootsrap. In order for a win to be recorded and for the game to function in general, it was necessary to break the obstacles into the smallest steps possible. To get the win donition using this modular approach, the boxes are put inside of an array and given an index position. A win is determined with an if statement which logs all of the possible horizontal, vertical and diagonal wins using the index positions. In order for a tie to be recorded, I included a move counter that increments by one after each box click. When the counter reaches nine and there is yet to be a winner, the game results in a tie.
--The game uses an API to handle the authorization (sign up, sign in, sign out, change password) and the requests necessary for the game to function (create new game, update game state, show games). 
+-The game uses an API to handle the authorization (sign up, sign in, sign out, change password) and the requests necessary for the game to function (create new game, update game state, show games).
 
 User Stories:
 -As a new user I want to be able to create an account using an email address, password and password confirmation so that I can access all of the content within tip-tap-toe.
