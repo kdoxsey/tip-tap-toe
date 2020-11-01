@@ -7,6 +7,7 @@ const authevents = require('./auth/events')
 const gameevents = require('./game/events')
 $(() => {
   // your JS code goes here
+  $('#message').text("welcome to tip-tap-toe, the world's best game of tic tac toe. sign up to start playing")
   $('#sign-up-form').on('submit', authevents.onSignUp)
   $('#sign-in-form').on('submit', authevents.onSignIn)
   $('#total-games').hide()

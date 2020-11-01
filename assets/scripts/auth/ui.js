@@ -2,13 +2,13 @@
 const store = require('./../store')
 
 const signUpSuccess = function (response) {
-  $('#message').text('Thanks for signing up ' + response.user.email)
+  $('#message').text('thanks for signing up ' + response.user.email)
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#message').text('Sign up failed, try again')
+  $('#message').text('sign up failed, try again')
 }
 
 const signInSuccess = function (response) {
@@ -17,6 +17,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
+  $('#sign-up-form').trigger('reset')
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#start-new-game-button').show()
@@ -27,16 +28,16 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function () {
-  $('#message').text('Sign in failed, try again')
+  $('#message').text('sign in failed, try again')
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#message').text('Password changed')
+  $('#message').text('password changed')
   $('#change-password-form').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
-  $('#message').text('Unable to change password')
+  $('#message').text('unable to change password')
 }
 
 const onSignOutSuccess = function () {
@@ -47,14 +48,14 @@ const onSignOutSuccess = function () {
   $('#sign-up-form').show()
   $('#sign-in-form').show()
   $('#game-board').hide()
-  $('#message').hide()
+  $('#message').text("welcome to tip-tap-toe, the world's best game of tic tac toe. sign up to start playing")
   $('#get-games').hide()
   $('#start-new-game-button').hide()
   $('#total-games').hide()
 }
 
 const onSignOutFailure = function () {
-  $('#message').text('Not so fast.')
+  $('#message').text('not so fast.')
 }
 
 module.exports = {
