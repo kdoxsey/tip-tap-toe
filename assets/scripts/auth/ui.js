@@ -23,6 +23,7 @@ const signInSuccess = function (response) {
   $('#get-games').show()
   $('#total-games').show()
   $('#sign-in-form').trigger('reset')
+  $('#message').show()
 }
 
 const signInFailure = function () {
@@ -48,6 +49,8 @@ const onSignOutSuccess = function () {
   $('#game-board').hide()
   $('#message').hide()
   $('#get-games').hide()
+  $('#start-new-game-button').hide()
+  $('#total-games').hide()
 }
 
 const onSignOutFailure = function () {
