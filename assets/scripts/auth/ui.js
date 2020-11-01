@@ -43,6 +43,7 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   $('message').text('See you next time!')
   store.user = null
+  $('#change-password-form').trigger('reset')
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
   $('#sign-up-form').show()
